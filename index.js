@@ -5,6 +5,15 @@ const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
   let inputValue = inputFieldEl.value
-  shoppingListEl.innerHTML += `<li>${inputValue}</li>`
+
+  clearInputFieldEl()
+  appendToShoppingListEl(inputValue)
 })
 
+function clearInputFieldEl(){
+  inputFieldEl.value = ""
+}
+
+function appendToShoppingListEl(value){
+  shoppingListEl.innerHTML += `<li>${value}</li>`
+}
