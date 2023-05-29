@@ -36,13 +36,16 @@ function clearShoppingListEl(){
 }
 
 onValue(shoppingListInDB, function(snapshot){
-  let shoppingListArray = Object.values(snapshot.val())
+  let shoppingListArray = Object.entries(snapshot.val())
 
   clearShoppingListEl()
 
   for (let x in shoppingListArray){
-    let currentValue = shoppingListArray[x]
-    appendToShoppingListEl(currentValue)
+    let currentItemID = shoppingListArray[x][0]
+    let currentItemValue = shoppingListArray[x][1]
+
+
+    appendToShoppingListEl(currentItemValue)
 
   }
 })
