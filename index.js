@@ -28,7 +28,11 @@ function clearInputFieldEl(){
 }
 
 function appendToShoppingListEl(value){
-  shoppingListEl.innerHTML += `<li>${value}</li>`
+  const newEl = document.createElement("li")
+  newEl.textContent = `${value}`
+
+  shoppingListEl.append(newEl)
+  // shoppingListEl.innerHTML += `<li>${value}</li>`
 }
 
 function clearShoppingListEl(){
@@ -41,8 +45,9 @@ onValue(shoppingListInDB, function(snapshot){
   clearShoppingListEl()
 
   for (let x in shoppingListArray){
-    let currentItemID = shoppingListArray[x][0]
-    let currentItemValue = shoppingListArray[x][1]
+    let currentItem = shoppingListArray[x]
+    let currentItemID = currentItem[0]
+    let currentItemValue = currentItem[1]
 
 
     appendToShoppingListEl(currentItemValue)
