@@ -3,6 +3,8 @@ html, body {
   padding: 0;
   font-family: 'Rubik', sans-serif;
   background-color: #EEF0F4;
+  color: #432000;
+  user-select: none;
 }
 
 .container {
@@ -43,6 +45,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #432000
+}
+
 ul {
   list-style: none;
   display: flex;
@@ -64,6 +70,5 @@ ul li {
 
 
 ul li:hover {
-  background-color: #AC485A;
-  color: #fff;
+  background-color: #FFECC7;
 }
