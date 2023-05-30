@@ -59,5 +59,11 @@ ul li {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   flex-grow: 1;
   text-align: center;
+  cursor: pointer;
 }
 
+
+ul li:hover {
+  background-color: #AC485A;
+  color: #fff;
+}
