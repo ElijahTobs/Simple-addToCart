@@ -15,9 +15,11 @@ const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
   let inputValue = inputFieldEl.value
-  push(shoppingListInDB, inputValue)
-  
-  clearInputFieldEl()
+  if (inputValue){
+    push(shoppingListInDB, inputValue)
+    
+    clearInputFieldEl()
+  }
 })
 
 function clearInputFieldEl(){
@@ -28,17 +30,23 @@ function clearShoppingListEl(){
   shoppingListEl.innerHTML = ""
 }
 
+
 onValue(shoppingListInDB, function(snapshot){
-  let shoppingListArray = Object.entries(snapshot.val())
-  clearShoppingListEl()
+  if (snapshot.exists()){
+    let shoppingListArray = Object.entries(snapshot.val())
+    clearShoppingListEl()
 
-  for (let x in shoppingListArray){
-    let currentItem = shoppingListArray[x]
-    // let currentItemID = currentItem[0]
-    // let currentItemValue = currentItem[1]
+    for (let x in shoppingListArray){
+      let currentItem = shoppingListArray[x]
+      // let currentItemID = currentItem[0]
+      // let currentItemValue = currentItem[1]
 
-    appendToShoppingListEl(currentItem)
+      appendToShoppingListEl(currentItem)
+    }
+  } else {
+    shoppingListEl.innerHTML = "No items here... yet"
   }
+
 })
 
 function appendToShoppingListEl(itemArr){
