@@ -17,6 +17,8 @@
 
 > Your shopping list items are visible to and can be deleted by anyone using the app
 
+> After opening the app on chrome browser, click the options button (usually the 3 dot icon) and click on "Add to Home screen". The app will then be added to your screen as an app.
+
 >> This is part of the [**Scrimba Front-End Career Path**](https://scrimba.com/learn/frontend) projects
 
 ## Built With
